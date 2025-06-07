@@ -1,0 +1,122 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('e40bdf0f4eb54da4076917afbea6f464.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #1c1c1c;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-background {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.login-box h2 {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: #eaeaea;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-group label {
+  font-size: 0.95rem;
+  color: #f0f0f0;
+  margin-bottom: 0.3rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  outline: none;
+  transition: background 0.3s;
+}
+.input-group input::placeholder {
+  color: #ddd;
+}
+.input-group input:focus {
+  background: rgba(255,255,255,0.3);
+}
+
+.btn-login {
+  padding: 0.9rem 1.5rem;
+  background-color: #8b2e4d;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(139, 46, 77, 0.4);
+}
+.btn-login:hover {
+  background-color: #a53a5d;
+  box-shadow: 0 10px 24px rgba(139, 46, 77, 0.6);
+}
+
+.extra-links {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+.extra-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.extra-links a:hover {
+  color: #ffc9d7;
+}
+.extra-links span {
+  margin: 0 0.5rem;
+  color: #bbb;
+}

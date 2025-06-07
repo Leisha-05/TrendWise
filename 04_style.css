@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f0f0f, #1f0f1f);
+  color: #f2f2f2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  background-image: url('e40bdf0f4eb54da4076917afbea6f464.jpg');
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.container {
+  display: flex;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1400px;
+  flex-wrap: nowrap; 
+  align-items: flex-start; 
+  height: 600px; 
+}
+
+
+.left-panel {
+  flex: 1.5;
+  background: rgba(255,255,255,0.05);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.05);
+
+  height: 100%;       
+  overflow-y: auto;   
+}
+
+.left-panel h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+.left-panel h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #ffccdd;
+}
+input, button {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.4rem 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+input {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+input::placeholder {
+  color: #ccc;
+}
+button {
+  background-color: #8b2e4d;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: #a43c60;
+}
+.stocks-list ul, .live-prices ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+.stocks-list li, .live-prices li {
+  background: rgba(255,255,255,0.1);
+  padding: 0.6rem;
+  margin: 0.3rem 0;
+  border-radius: 6px;
+}
+
+/* Right Panel */
+.right-panel {
+  flex: 1;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  height: 100%;           
+  min-width: 350px;       
+  max-width: 420px;       
+  padding: 2rem;          
+  box-sizing: border-box; 
+}
+
+.content {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 100%;       
+  width: 100%;           
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 360px; 
+}
+
+#portfolioChart {
+  display: block;
+  margin: 2rem auto 0 auto;
+  max-width: 90%;
+}
+
+.right-panel h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+.right-panel p {
+  margin: 0.7rem 0;
+  font-size: 1.05rem;
+}
+#profit-loss.green {
+  color: #6fff6f;
+}
+#profit-loss.red {
+  color: #ff6f6f;
+}
+#profit-loss.neutral {
+  color: #ccc;
+}
+.logout{
+  transform: translateY(15px);
+}
