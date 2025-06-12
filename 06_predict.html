@@ -1,27 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Predict Stock | TrendWise</title>
   <link rel="stylesheet" href="06_style.css" />
 </head>
+
 <body>
   <div class="overlay-box">
     <div class="form-panel">
+
       <h2>PREDICT STOCK MOVEMENT</h2>
       <form id="predict-form">
-        <input type="text" id="company" placeholder="Company Name (e.g., AAPL)" required />
+        <input type="text" id="company" placeholder="Company Name" required />
         <input type="number" step="0.01" id="open" placeholder="Open Price" required />
-        <input type="number" step="0.01" id="close" placeholder="Close Price" required />
-        <input type="number" step="0.01" id="yesterday" placeholder="Yesterday's Close Price" required />
-        <input type="number" step="0.01" id="daybefore" placeholder="Day Before Yesterday's Close" required />
+        <input type="number" step="0.01" id="close" placeholder="Close Price " required />
+        <input type="number" step="1" id="volume" placeholder="Volume" required />
         <button type="submit">Predict</button>
       </form>
       <div id="prediction-result" class="result-box"></div>
     </div>
   </div>
 
-  <script src="predict.js" type="module"></script>
+  <script>
+    document.getElementById("predict-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const company = document.getElementById("company").value;
+      const open = parseFloat(document.getElementById("open").value);
+      const close = parseFloat(document.getElementById("close").value);
+      const volume = parseInt(document.getElementById("volume").value);
+
+      const data = {
+        day_before_yesterday: open,
+        yesterday_close: close,
+        volume: volume,
+        company: company
+      };
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const resultBox = document.getElementById("prediction-result");
+
+        if (response.ok) {
+          const result = await response.json();
+          resultBox.innerHTML = `<p><strong>${result.message}</strong></p>`;
+        } else {
+          const errorText = await response.text();
+          resultBox.innerHTML = `<p style="color: red;">Error: ${errorText}</p>`;
+        }
+
+      } catch (error) {
+        document.getElementById("prediction-result").innerHTML = `<p style="color:red;">Request failed: ${error}</p>`;
+      }
+    });
+  </script>
 </body>
+
 </html>
