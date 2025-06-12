@@ -1,3 +1,4 @@
+ HEAD
 # stock-api
 ## Step 1 
 Clone this repo in the local machine
@@ -10,3 +11,5 @@ conda activate venv/
 ## Step 4 
 install the req files 
 pip install -r requirements.txt
+# TrendWise
+ 3183e1d36b8260119e7c9086c96f7629c522ab7c

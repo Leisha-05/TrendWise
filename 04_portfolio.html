@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | TrendWise</title>
+  <link rel="stylesheet" href="04_style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2>Manage Your Stocks</h2>
+
+    <form id="add-stock-form">
+      <h3>Add Stock</h3>
+      <input type="text" id="stock-symbol" placeholder="Stock Symbol (e.g., AAPL)" required />
+      <input type="number" id="stock-qty" placeholder="Quantity" required />
+      <input type="number" id="stock-price" placeholder="Buy Price" required />
+      <input type="date" id="stock-date" required />
+      <button type="submit">Add</button>
+    </form>
+
+    <form id="remove-stock-form">
+      <h3>Remove Stock</h3>
+      <input type="text" id="remove-symbol" placeholder="Stock Symbol" required />
+      <input type="number" id="remove-qty" placeholder="Quantity to Remove" required />
+      <button type="submit">Remove</button>
+    </form>
+
+      <div class="stocks-list">
+        <h3>Bought Stocks</h3>
+        <ul id="bought-stocks-list">
+        </ul>
+      </div>
+
+      <div class="live-prices">
+        <h3>Live Stock Prices</h3>
+        <ul id="live-prices-list">
+        </ul>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="blur-bg"></div>
+      <div class="content">
+        <h2>My Portfolio</h2>
+        <p><strong>Name:</strong> <span id="user-name">Xyz</span></p>
+        <p><strong>Email:</strong> <span id="user-email">xyz@gmail.com</span></p>
+        <p><strong>Total Invested:</strong> ₹<span id="total-invested">0</span></p>
+        <p><strong>Status:</strong> <span id="profit-loss" class="neutral">₹0</span></p>
+        <canvas id="portfolioChart" width="300" height="300"></canvas>
+        <button class="logout" id="logout-btn">Logout</button>
+      </div>
+    </div>
+    
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="04_script.js"></script>
+</body>
+</html>

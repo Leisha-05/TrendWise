@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Predict Stock | TrendWise</title>
+  <link rel="stylesheet" href="06_style.css" />
+</head>
+<body>
+  <div class="overlay-box">
+    <div class="form-panel">
+      <h2>PREDICT STOCK MOVEMENT</h2>
+      <form id="predict-form">
+        <input type="text" id="company" placeholder="Company Name (e.g., AAPL)" required />
+        <input type="number" step="0.01" id="open" placeholder="Open Price" required />
+        <input type="number" step="0.01" id="close" placeholder="Close Price" required />
+        <input type="number" step="0.01" id="yesterday" placeholder="Yesterday's Close Price" required />
+        <input type="number" step="0.01" id="daybefore" placeholder="Day Before Yesterday's Close" required />
+        <button type="submit">Predict</button>
+      </form>
+      <div id="prediction-result" class="result-box"></div>
+    </div>
+  </div>
+
+  <script src="predict.js" type="module"></script>
+</body>
+</html>
